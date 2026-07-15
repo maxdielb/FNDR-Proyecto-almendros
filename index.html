@@ -31,17 +31,17 @@
         const { useState, useEffect } = React;
 
         const productoresBD_Inicial = [
-            { id: 1, codigo: "P001", nombreAgricola: "Agrícola Alto Primavera", productor: "Alejandro Martinez", telefono: "933961424", localidad: "Rengo", coordenadas: "-34.467152, -70.756167", supAlmendros: 93.6, progreso: 0 },
-            { id: 2, codigo: "P002", nombreAgricola: "Agrícola Alicura (Ucuquer)", productor: "Agustin Ovalle", telefono: "991612820", localidad: "Litueche", coordenadas: "-34.013448, -71.690217", supAlmendros: 100.0, progreso: 0 },
-            { id: 3, codigo: "P003", nombreAgricola: "Predio Olga Saavedra", productor: "Olga Saavedra", telefono: "985084614", localidad: "Bellavista", coordenadas: "-34.428115, -70.778472", supAlmendros: 1.0, progreso: 0 },
-            { id: 4, codigo: "P004", nombreAgricola: "Predio Héctor Rubio", productor: "Héctor Rubio", telefono: "946670497", localidad: "Chanqueahue", coordenadas: "-34.393055, -70.786503", supAlmendros: 0.5, progreso: 0 },
-            { id: 5, codigo: "P005", nombreAgricola: "Predio Miguel Ángel Banda", productor: "Miguel Ángel Banda", telefono: "912298156", localidad: "Rinconada de Malambo", coordenadas: "-34.424601, -70.833300", supAlmendros: 0.87, progreso: 0 },
-            { id: 6, codigo: "P006", nombreAgricola: "Predio Tatiana Canales", productor: "Tatiana Lorena Canales", telefono: "997647373", localidad: "El Cerrillo", coordenadas: "-34.395973, -70.782422", supAlmendros: 0.25, progreso: 0 },
-            { id: 7, codigo: "P007", nombreAgricola: "Predio Gloria Medina", productor: "Gloria Medina", telefono: "995397066", localidad: "Rinconada de Malambo", coordenadas: "-34.423912, -70.834487", supAlmendros: 0.11, progreso: 0 },
-            { id: 8, codigo: "P008", nombreAgricola: "Predio Patricio Cartes", productor: "Patricio Cartes", telefono: "932250222", localidad: "El Cerrillo", coordenadas: "-34.393188, -70.777404", supAlmendros: 0.5, progreso: 0 },
-            { id: 9, codigo: "P009", nombreAgricola: "Fundo Tunca Arriba S.A", productor: "Hugo Arros", telefono: "56996798577", localidad: "Codegua", coordenadas: "34°07'21.1S 70°38'06.4W", supAlmendros: 211.0, progreso: 0 },
-            { id: 10, codigo: "P010", nombreAgricola: "Agrícola La Pandina", productor: "Ignacio Urquiza", telefono: "56992268298", localidad: "Rengo", coordenadas: "-34.429992, -70.778625", supAlmendros: 82.0, progreso: 0 },
-            { id: 11, codigo: "P011", nombreAgricola: "Fundo Colihuito", productor: "Bruno Ragni", telefono: "56994493022", localidad: "Requinoa", coordenadas: "Requinoa", supAlmendros: 64.0, progreso: 0 }
+            { id: 1, codigo: "P001", nombreAgricola: "Agrícola Alto Primavera", productor: "Alejandro Martinez", telefono: "933961424", localidad: "Rengo", coordenadas: "-34.467152, -70.756167", supAlmendros: 93.6, progreso: 0, encuestasCuarteles: [] },
+            { id: 2, codigo: "P002", nombreAgricola: "Agrícola Alicura (Ucuquer)", productor: "Agustin Ovalle", telefono: "991612820", localidad: "Litueche", coordenadas: "-34.013448, -71.690217", supAlmendros: 100.0, progreso: 0, encuestasCuarteles: [] },
+            { id: 3, codigo: "P003", nombreAgricola: "Predio Olga Saavedra", productor: "Olga Saavedra", telefono: "985084614", localidad: "Bellavista", coordenadas: "-34.428115, -70.778472", supAlmendros: 1.0, progreso: 0, encuestasCuarteles: [] },
+            { id: 4, codigo: "P004", nombreAgricola: "Predio Héctor Rubio", productor: "Héctor Rubio", telefono: "946670497", localidad: "Chanqueahue", coordenadas: "-34.393055, -70.786503", supAlmendros: 0.5, progreso: 0, encuestasCuarteles: [] },
+            { id: 5, codigo: "P005", nombreAgricola: "Predio Miguel Ángel Banda", productor: "Miguel Ángel Banda", telefono: "912298156", localidad: "Rinconada de Malambo", coordenadas: "-34.424601, -70.833300", supAlmendros: 0.87, progreso: 0, encuestasCuarteles: [] },
+            { id: 6, codigo: "P006", nombreAgricola: "Predio Tatiana Canales", productor: "Tatiana Lorena Canales", telefono: "997647373", localidad: "El Cerrillo", coordenadas: "-34.395973, -70.782422", supAlmendros: 0.25, progreso: 0, encuestasCuarteles: [] },
+            { id: 7, codigo: "P007", nombreAgricola: "Predio Gloria Medina", productor: "Gloria Medina", telefono: "995397066", localidad: "Rinconada de Malambo", coordenadas: "-34.423912, -70.834487", supAlmendros: 0.11, progreso: 0, encuestasCuarteles: [] },
+            { id: 8, codigo: "P008", nombreAgricola: "Predio Patricio Cartes", productor: "Patricio Cartes", telefono: "932250222", localidad: "El Cerrillo", coordenadas: "-34.393188, -70.777404", supAlmendros: 0.5, progreso: 0, encuestasCuarteles: [] },
+            { id: 9, codigo: "P009", nombreAgricola: "Fundo Tunca Arriba S.A", productor: "Hugo Arros", telefono: "56996798577", localidad: "Codegua", coordenadas: "34°07'21.1S 70°38'06.4W", supAlmendros: 211.0, progreso: 0, encuestasCuarteles: [] },
+            { id: 10, codigo: "P010", nombreAgricola: "Agrícola La Pandina", productor: "Ignacio Urquiza", telefono: "56992268298", localidad: "Rengo", coordenadas: "-34.429992, -70.778625", supAlmendros: 82.0, progreso: 0, encuestasCuarteles: [] },
+            { id: 11, codigo: "P011", nombreAgricola: "Fundo Colihuito", productor: "Bruno Ragni", telefono: "56994493022", localidad: "Requinoa", coordenadas: "Requinoa", supAlmendros: 64.0, progreso: 0, encuestasCuarteles: [] }
         ];
 
         const CircularProgress = ({ progreso }) => {
@@ -68,8 +68,21 @@
 
         function App() {
             const [vistaActual, setVistaActual] = useState('inicio'); 
-            const [perfil, setPerfil] = useState('');
-            const [productores, setProductores] = useState(productoresBD_Inicial);
+            
+            // MEMORIA PERSISTENTE (Local Storage)
+            const [productores, setProductores] = useState(() => {
+                const guardado = localStorage.getItem('almendros_data_v1');
+                if (guardado) {
+                    return JSON.parse(guardado);
+                }
+                return productoresBD_Inicial;
+            });
+
+            // Guardar automáticamente cada vez que cambien los productores
+            useEffect(() => {
+                localStorage.setItem('almendros_data_v1', JSON.stringify(productores));
+            }, [productores]);
+
             const [productorActivo, setProductorActivo] = useState(null);
             const [cuartelActivo, setCuartelActivo] = useState(null);
             const [cuarteles, setCuarteles] = useState([]);
@@ -77,7 +90,6 @@
             const [pestana, setPestana] = useState('info'); 
             const [notificacion, setNotificacion] = useState({ visible: false, texto: '' });
             const [modalNuevoProd, setModalNuevoProd] = useState(false);
-            const [nuevoProdFormData, setNuevoProdFormData] = useState({ nombreAgricola: '', productor: '', localidad: '', supAlmendros: '' });
             const [modalReinicio, setModalReinicio] = useState(false);
             
             // Valor del Dólar
@@ -169,8 +181,17 @@
                 setSumaDestinos(total);
             }, [destinosVenta]);
 
+            // Función para reiniciar solo un productor específico
             const confirmarReinicioApp = () => {
-                window.location.reload();
+                if (modalReinicio) {
+                    setProductores(prev => prev.map(p => {
+                        if(p.id === modalReinicio) {
+                            return { ...p, progreso: 0, encuestasCuarteles: [] };
+                        }
+                        return p;
+                    }));
+                    setModalReinicio(false);
+                }
             };
 
             const mostrarAutoguardado = (siguientePestana) => {
@@ -299,14 +320,14 @@
             if (vistaActual === 'productores') {
                 return (
                     <div className="pb-20 bg-gray-50 min-h-screen relative">
-                        {modalReinicio && (
+                        {modalReinicio !== false && (
                             <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
                                 <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl animate-fade-in">
-                                    <h3 className="text-lg font-black text-red-600 mb-2">⚠️ ¿Reiniciar Encuesta?</h3>
-                                    <p className="text-gray-600 text-sm mb-6">Esta acción borrará todos los datos ingresados que no hayan sido exportados. ¿Deseas comenzar desde cero?</p>
+                                    <h3 className="text-lg font-black text-red-600 mb-2">⚠️ ¿Borrar datos de este Productor?</h3>
+                                    <p className="text-gray-600 text-sm mb-6">Esta acción borrará todos los datos ingresados para este productor en ESTE dispositivo. No se pueden recuperar.</p>
                                     <div className="flex gap-3">
                                         <button onClick={() => setModalReinicio(false)} className="flex-1 py-3 bg-gray-100 text-gray-700 font-bold rounded-xl active:bg-gray-200">Cancelar</button>
-                                        <button onClick={confirmarReinicioApp} className="flex-1 py-3 bg-red-600 text-white font-bold rounded-xl active:bg-red-700 shadow-md">Sí, Reiniciar</button>
+                                        <button onClick={confirmarReinicioApp} className="flex-1 py-3 bg-red-600 text-white font-bold rounded-xl active:bg-red-700 shadow-md">Sí, Borrar</button>
                                     </div>
                                 </div>
                             </div>
@@ -345,7 +366,7 @@
                                     </div>
                                     <div className="flex flex-col items-center">
                                         <CircularProgress progreso={prod.progreso} />
-                                        <button onClick={(e) => { e.stopPropagation(); setModalReinicio(true); }} className="text-[10px] text-red-500 font-bold mt-1 bg-red-50 px-2 py-0.5 rounded-full border border-red-100 active:bg-red-100">
+                                        <button onClick={(e) => { e.stopPropagation(); setModalReinicio(prod.id); }} className="text-[10px] text-red-500 font-bold mt-1 bg-red-50 px-2 py-0.5 rounded-full border border-red-100 active:bg-red-100">
                                             🔄 Reiniciar
                                         </button>
                                     </div>
